@@ -16,19 +16,13 @@ const generateHTML = pokemons => pokemons.reduce((accumulator, { name, id, types
   return accumulator;
 }, '')
 
-
 const insertPokemonsIntoPage = pokemons => {
   const ul = document.querySelector('[data-js="pokedex"]')
   ul.innerHTML = pokemons
 }
-
 
 const pokemonPromisses = generatePokemonPromises()
 
 Promise.all(pokemonPromisses)
   .then(generateHTML)
   .then(insertPokemonsIntoPage)
-
-
-
-// parei em 18 minutos
